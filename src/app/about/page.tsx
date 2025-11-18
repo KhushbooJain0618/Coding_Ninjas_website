@@ -63,26 +63,6 @@ export default function AboutUsPage() {
       {/* NINJA TECH TERMINAL OVERLAY */}
       <div className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
         <div className="flex justify-between items-center px-4 sm:px-6 py-3 text-xs font-mono">
-          <motion.div
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex items-center gap-2"
-          >
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            <span className="hidden xs:inline">SYSTEM: ONLINE</span>
-          </motion.div>
-          
-          <motion.div
-            key={connectionStatus}
-            initial={{ opacity: 0, x: 10 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-2"
-          >
-            {connectionStatus === "secure" && <Shield className="w-3 h-3 text-green-400" />}
-            {connectionStatus === "encrypted" && <GitBranch className="w-3 h-3 text-blue-400" />}
-            {connectionStatus === "stealth" && <Eye className="w-3 h-3 text-purple-400" />}
-            <span className="uppercase tracking-widest hidden sm:inline">{connectionStatus}</span>
-          </motion.div>
         </div>
       </div>
 
@@ -616,7 +596,7 @@ function NinjaMantra() {
           whileHover={{ scale: 1.1, y: -5 }}
           className="flex items-center gap-1 sm:gap-2"
         >
-          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF6C0C] rounded-full" />
+          {/* <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF6C0C]" /> */}
           <span className="text-[#FF6C0C] font-bold text-sm sm:text-lg tracking-widest">{word}</span>
           {index < words.length - 1 && (
             <motion.div
